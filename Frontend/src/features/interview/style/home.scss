@@ -1,0 +1,489 @@
+// ── Black & White Theme ───────────────────────────────────────────────────────
+$black:        #000000;
+$white:        #ffffff;
+$gray-50:      #fafafa;
+$gray-100:     #a3a3a3;
+$gray-200:     #525252;
+$gray-300:     #262626;
+$gray-400:     #171717;
+$font-stack:   system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// ── Page Shell ───────────────────────────────────────────────────────────────
+.home-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $black;
+    color: $white;
+    font-family: $font-stack;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem 3rem;
+    gap: 2.5rem;
+}
+
+// ── Top Nav ───────────────────────────────────────────────────────────────────
+.home-nav {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0 0;
+    border-bottom: 1px solid $gray-300;
+    padding-bottom: 1.25rem;
+
+    &__brand {
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    &__tagline {
+        font-size: 0.75rem;
+        color: $gray-100;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+}
+
+// ── Page Header ───────────────────────────────────────────────────────────────
+.page-header {
+    text-align: center;
+    max-width: 640px;
+    padding-top: 1rem;
+
+    h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: $white;
+        letter-spacing: -0.03em;
+        line-height: 1.15;
+    }
+
+    p {
+        color: $gray-100;
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .highlight {
+        color: $white;
+        border-bottom: 2px solid $white;
+        padding-bottom: 2px;
+    }
+}
+
+// ── Main Card ─────────────────────────────────────────────────────────────────
+.interview-card {
+    width: 100%;
+    max-width: 900px;
+    background-color: $black;
+    border: 1px solid $white;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    &__body {
+        display: flex;
+        min-height: 520px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            min-height: unset;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+        border-top: 1px solid $gray-300;
+        background-color: $gray-400;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .footer-info {
+            font-size: 0.75rem;
+            color: $gray-100;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// ── Panels ────────────────────────────────────────────────────────────────────
+.panel-divider {
+    width: 1px;
+    background-color: $gray-300;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 1px;
+    }
+}
+
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.75rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.25rem;
+
+        h2 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: $white;
+            flex: 1;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        color: $white;
+        opacity: 0.85;
+    }
+
+    &__textarea {
+        flex: 1;
+        width: 100%;
+        min-height: 280px;
+        background-color: $black;
+        border: 1px solid $gray-200;
+        border-radius: 0.5rem;
+        padding: 0.85rem 1rem;
+        color: $white;
+        font-family: $font-stack;
+        font-size: 0.875rem;
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s;
+        line-height: 1.6;
+
+        &::placeholder {
+            color: $gray-200;
+        }
+
+        &:focus {
+            border-color: $white;
+        }
+
+        &--short {
+            flex: unset;
+            min-height: 96px;
+        }
+    }
+
+    &--left {
+        position: relative;
+
+        .char-counter {
+            align-self: flex-end;
+            font-size: 0.7rem;
+            color: $gray-100;
+            letter-spacing: 0.02em;
+        }
+    }
+
+    &--right {
+        gap: 0.85rem;
+    }
+}
+
+// ── Badges ────────────────────────────────────────────────────────────────────
+.badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 1px solid $white;
+    color: $white;
+    background-color: transparent;
+
+    &--required,
+    &--best {
+        border-color: $gray-100;
+        color: $gray-100;
+    }
+}
+
+// ── Section Label ─────────────────────────────────────────────────────────────
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $white;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+// ── Dropzone ──────────────────────────────────────────────────────────────────
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dropzone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 1.75rem 1rem;
+    background-color: $black;
+    border: 1px dashed $gray-200;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+
+    &:hover {
+        border-color: $white;
+        background-color: $gray-400;
+    }
+
+    &__icon {
+        color: $white;
+        margin-bottom: 0.25rem;
+        opacity: 0.9;
+    }
+
+    &__title {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $white;
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-size: 0.75rem;
+        color: $gray-100;
+        margin: 0;
+    }
+
+    &__filename {
+        font-size: 0.8rem;
+        color: $white;
+        margin-top: 0.25rem;
+        font-weight: 500;
+    }
+}
+
+// ── OR Divider ────────────────────────────────────────────────────────────────
+.or-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: $gray-100;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: $gray-300;
+    }
+
+    span {
+        white-space: nowrap;
+    }
+}
+
+// ── Self Description ──────────────────────────────────────────────────────────
+.self-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+// ── Info Box ──────────────────────────────────────────────────────────────────
+.info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    background-color: $gray-400;
+    border: 1px solid $gray-300;
+    border-radius: 0.5rem;
+
+    &__icon {
+        flex-shrink: 0;
+        color: $white;
+        margin-top: 1px;
+        opacity: 0.8;
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.8rem;
+        color: $gray-100;
+        line-height: 1.55;
+
+        strong {
+            color: $white;
+            font-weight: 600;
+        }
+    }
+}
+
+// ── Generate Button ───────────────────────────────────────────────────────────
+.generate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    background-color: $white;
+    color: $black;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid $white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+    font-family: $font-stack;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+
+    &:active {
+        opacity: 0.85;
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+}
+
+// ── Recent Reports ────────────────────────────────────────────────────────────
+.recent-reports {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 900px;
+
+    h2 {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $gray-100;
+    }
+
+    .reports-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 0.75rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .report-item {
+            background-color: $black;
+            border: 1px solid $gray-300;
+            border-radius: 0.6rem;
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            cursor: pointer;
+            transition: border-color 0.2s, background-color 0.2s;
+
+            h3 {
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: $white;
+                margin: 0;
+            }
+
+            .report-meta {
+                font-size: 0.75rem;
+                color: $gray-100;
+                margin: 0;
+            }
+
+            .match-score {
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: $white;
+                margin: 0;
+                margin-top: 0.25rem;
+                letter-spacing: 0.02em;
+
+                &.score--high,
+                &.score--mid,
+                &.score--low {
+                    color: $gray-100;
+                }
+            }
+
+            &:hover {
+                border-color: $white;
+                background-color: $gray-400;
+            }
+        }
+    }
+}
+
+// ── Loading Screen ────────────────────────────────────────────────────────────
+.loading-screen {
+    min-height: 100vh;
+    width: 100%;
+    background-color: $black;
+    color: $white;
+    font-family: $font-stack;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    h1 {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: $gray-100;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    &::after {
+        content: '';
+        width: 24px;
+        height: 24px;
+        border: 2px solid $gray-300;
+        border-top-color: $white;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
