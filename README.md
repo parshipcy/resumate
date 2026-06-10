@@ -2,7 +2,7 @@
 
 **Resumate** helps you prepare for job interviews with a plan built around you - not a generic checklist.
 
-Paste a job description, upload your resume (or write a quick summary about yourself), and Resumate uses AI to create a personalized interview strategy in about 30 seconds.
+Paste a job description, upload your resume (or write a quick summary about yourself), and Resumate uses AI to create a personalized interview strategy in about 30 seconds. Also it can create a job-specific resume as a PDF, ready to download from your interview plan.
 
 ---
 
