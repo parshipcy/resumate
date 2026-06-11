@@ -4,6 +4,10 @@
 
 Paste a job description, upload your resume (or write a quick summary about yourself), and Resumate uses AI to create a personalized interview strategy in about 30 seconds. Also it can create a job-specific resume as a PDF, ready to download from your interview plan.
 
+## Live demo
+
+**[resumate12.netlify.app](https://resumate12.netlify.app)** - sign up, generate interview plans, and explore AI-powered prep. Resume PDF download works locally; see note below for production limits.
+
 ## Screenshots
 
 ![Create your custom interview plan](assets/Screenshot%202026-06-11%20103329.png)
