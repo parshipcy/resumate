@@ -4,6 +4,12 @@
 
 Paste a job description, upload your resume (or write a quick summary about yourself), and Resumate uses AI to create a personalized interview strategy in about 30 seconds. Also it can create a job-specific resume as a PDF, ready to download from your interview plan.
 
+## Screenshots
+
+![Create your custom interview plan](assets/Screenshot%202026-06-11%20103329.png)
+
+![Interview plan with technical questions](assets/Screenshot%202026-06-11%20103407.png)
+
 ---
 
 ## Getting started
