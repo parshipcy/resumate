@@ -29,6 +29,11 @@ Open [http://localhost:5173](http://localhost:5173), create an account, and gene
 
 ---
 
+> [!NOTE]
+> Resume PDF download works locally but may fail when deployed (Netlify + Render free tier): **Netlify proxy timeout** - API requests proxied through `_redirects` are cut off after ~26 seconds. PDF generation (Gemini + Puppeteer) often takes longer. **Render free tier limits** - Puppeteer/Chromium needs more RAM than the 512 MB free instance provides, so the backend can crash during PDF creation. Login, registration, and interview plans still work; only the download step is affected.
+
+---
+
 ## Built with
 
 React · Express · MongoDB · Google Gemini
