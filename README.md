@@ -46,4 +46,4 @@ Open [http://localhost:5173](http://localhost:5173), create an account, and gene
 
 ## Built with
 
-React · Express · MongoDB · Google Gemini
+React · Nodejs · Express · MongoDB
